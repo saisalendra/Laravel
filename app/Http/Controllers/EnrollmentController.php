@@ -9,6 +9,7 @@ use Illuminate\View\View;
 
 
 
+
 class EnrollmentController extends Controller
 {
     /**
@@ -24,7 +25,9 @@ class EnrollmentController extends Controller
      * Show the form for creating a new resource.
      */
     public function create(): View
+
     {
+        
         return view('enrollments.create');
     }
 
@@ -33,6 +36,7 @@ class EnrollmentController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        
         $input = $request->all();
         Enrollment::create($input);
         return redirect('enrollments')->with('flash_message', 'Enrollment Addedd!');
